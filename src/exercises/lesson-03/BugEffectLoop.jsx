@@ -15,10 +15,11 @@ export default function BugEffectLoop() {
 
   useEffect(() => {
     setCount(count + 1);
-  });
+  }, []); // here is the fix to run it once.
 
   return <p>Bug 1 Count: {count}</p>;
 }
 
 // Explanation:
-// (Write your explanation here)
+// i added a dependency array. this helps  the code run once and does not run during every render.
+// it runs only during the mount now and not running in every time.

@@ -13,8 +13,9 @@ export default function BugMutatedState() {
   let [count, setCount] = useState(0);
 
   function handleAdd() {
-    count++;
-    setCount(count);
+    // count++;
+    //setCount(count);
+    setCount((prevCount) => prevCount + 1);
   }
 
   return (
@@ -27,3 +28,5 @@ export default function BugMutatedState() {
 
 // Explanation:
 // (Write your explanation here)
+// i added a setter function. this will help react to add the count with the previous count + one.
+//count ++ was directly adding the count without knowing the state update.
